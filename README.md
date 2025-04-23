@@ -59,6 +59,9 @@ Options:
   -f, --filter <FILTER>
           Filter allows for a regex to be supplied which will filter the files to be compiled. For instance, to filter out test files for compilation while doing feature work
 
+  -b, --before-build <BEFORE_BUILD>
+          This allows one to pass an additional command to the watcher, which allows it to run before build starts. For instance, to run code generation before compilation.          
+
   -a, --after-build <AFTER_BUILD>
           This allows one to pass an additional command to the watcher, which allows it to run when finished. For instance, to play a sound when done compiling, or to run a test suite. NOTE - You may need to add '--color=always' to your subcommand in case you want to output colour as well
 
@@ -110,9 +113,17 @@ Options:
   - [Yarn](https://yarnpkg.com/) or [Npm](https://www.npmjs.com/) - Npm probably comes with your node installation
 
   1. `cd testrepo && yarn` (install dependencies for submodule)
-  2. `cargo run`
+  2. `cargo run`  
 
   Running tests:
 
   1. `cargo build --release`
   2. `./tests/suite.sh`
+
+  ## Alternative: VSCode and devcontainer
+
+  With devcontainer it's possible to avoid having to install dependencies such as Rust and Node locally.
+
+  - [Docker Engine](https://docs.docker.com/engine/) installed locally
+  - [Dev Containers plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for VSCode installed locally
+  - Open project in VSCode. Accept prompt saying "Rebuild in devcontainer?"

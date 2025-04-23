@@ -1,0 +1,12 @@
+services:
+  devcontainer:
+    build:
+      args:
+        USERNAME: ${USERNAME}
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity
+    networks:
+      - default

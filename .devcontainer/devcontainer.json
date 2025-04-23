@@ -1,0 +1,26 @@
+{
+  "name": "Rewatch",
+  "dockerComposeFile": "docker-compose.yml",
+  "remoteEnv": {
+    "USERNAME": "${localEnv:USER}"
+  },
+  "containerUser": "${localEnv:USER}",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "remoteUser": "${localEnv:USER}",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": true,
+      "moby": false
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "chenglou92.rescript-vscode",
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  }
+}
